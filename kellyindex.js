@@ -1,3 +1,4 @@
+const bandsList = document.querySelector('#bands');
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
 const compare = (test, b) => {
@@ -27,9 +28,13 @@ const takeOutArticles = (c) => {
 }
 
 const newArr = bands.map(takeOutArticles)
-
-console.log(newArr);
-
 const sorted = newArr.sort();
+
+sorted.forEach( (c) => {
+    const listItem =  `<li>${c}</li>`;
+    bandsList.innerHTML += listItem;
+ })
+
+
 
 console.log(sorted);
